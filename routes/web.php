@@ -18,3 +18,6 @@ $router->post('/auth', 'AuthController@auth');
 
 // For UserController
 $router->post('/register', 'UserController@store');
+
+// For MatchController
+$router->get('/matches', 'MatchController@get');
