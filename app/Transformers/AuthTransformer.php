@@ -7,6 +7,12 @@ use App\Models\User;
 
 class AuthTransformer extends TransformerAbstract
 {
+    /**
+     * Transform a user model for authentication.
+     *
+     * @param User $user
+     * @return void
+     */
     public function transform(User $user)
     {
         return [

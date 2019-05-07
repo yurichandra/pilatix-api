@@ -11,6 +11,12 @@ class AuthController extends RestController
 {
     protected $transformer = AuthTransformer::class;
 
+    /**
+     * Method to authenticate user account
+     *
+     * @param Request $request
+     * @return void
+     */
     public function auth(Request $request)
     {
         try {
