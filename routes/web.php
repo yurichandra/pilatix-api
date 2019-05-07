@@ -12,3 +12,7 @@
 */
 
 $router->get('/', 'IndexController@index');
+
+// For auth
+
+$router->post('/auth', 'AuthController@auth');
