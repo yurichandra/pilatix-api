@@ -24,3 +24,4 @@ $router->get('/matches', 'MatchController@get');
 
 // For ClubController
 $router->get('/clubs', 'ClubController@get');
+$router->get('/clubs/{id}/tickets', 'ClubController@getTicketsByClub');
