@@ -21,3 +21,6 @@ $router->post('/register', 'UserController@store');
 
 // For MatchController
 $router->get('/matches', 'MatchController@get');
+
+// For ClubController
+$router->get('/clubs', 'ClubController@get');
