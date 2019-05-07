@@ -20,4 +20,14 @@ class City extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    /**
+     * Define relation with Stadium model.
+     *
+     * @return void
+     */
+    public function stadiums()
+    {
+        return $this->hasMany(Stadium::class);
+    }
 }

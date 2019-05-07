@@ -20,4 +20,14 @@ class Club extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    /**
+     * Define relation with Stadium model.
+     *
+     * @return void
+     */
+    public function stadium()
+    {
+        return $this->hasOne(Stadium::class);
+    }
 }
