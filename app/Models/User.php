@@ -7,6 +7,7 @@ use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use App\Models\Personal;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
@@ -29,4 +30,14 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    /**
+     * Define relation with Personal model.
+     *
+     * @return void
+     */
+    public function personal()
+    {
+        return $this->hasOne(Personal::class);
+    }
 }
