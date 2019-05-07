@@ -30,4 +30,24 @@ class Club extends Model
     {
         return $this->hasOne(Stadium::class);
     }
+
+    /**
+     * Define relation with Match model by homeMatches.
+     *
+     * @return void
+     */
+    public function homeMatches()
+    {
+        return $this->hasMany(Match::class, 'home_team_id');
+    }
+
+    /**
+     * Define relation with Match model by awayMatches.
+     *
+     * @return void
+     */
+    public function awayMatches()
+    {
+        return $this->hasMany(Match::class, 'away_team_id');
+    }
 }

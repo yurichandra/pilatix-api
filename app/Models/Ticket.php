@@ -11,4 +11,14 @@ class Ticket extends Model
         'category_id',
         'type_id',
     ];
+
+    /**
+     * Define relation with Match model.
+     *
+     * @return void
+     */
+    public function match()
+    {
+        return $this->belongsTo(Match::class);
+    }
 }

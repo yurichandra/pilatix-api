@@ -42,4 +42,14 @@ class Match extends Model
     {
         return $this->belongsTo(Stadium::class);
     }
+
+    /**
+     * Define relation with Ticket model.
+     *
+     * @return void
+     */
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }
