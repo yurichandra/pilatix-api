@@ -13,6 +13,8 @@
 
 $router->get('/', 'IndexController@index');
 
-// For auth
-
+// For AuthController
 $router->post('/auth', 'AuthController@auth');
+
+// For UserController
+$router->post('/register', 'UserController@store');
