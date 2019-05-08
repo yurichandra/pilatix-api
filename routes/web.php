@@ -21,7 +21,16 @@ $router->post('/register', 'UserController@store');
 
 // For MatchController
 $router->get('/matches', 'MatchController@get');
+$router->post('/matches', 'MatchController@store');
+$router->patch('/matches/{id}', 'MatchController@update');
+$router->delete('/matches/{id}', 'MatchController@delete');
 
 // For ClubController
 $router->get('/clubs', 'ClubController@get');
 $router->get('/clubs/{id}/tickets', 'ClubController@getTicketsByClub');
+
+// For TicketController
+$router->get('/tickets', 'TicketController@get');
+$router->post('/tickets', 'TicketController@store');
+$router->patch('/tickets/{id}', 'TicketController@update');
+$router->delete('/tickets/{id}', 'TicketController@delete');
