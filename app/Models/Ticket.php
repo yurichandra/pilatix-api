@@ -21,4 +21,14 @@ class Ticket extends Model
     {
         return $this->belongsTo(Match::class);
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
