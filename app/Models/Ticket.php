@@ -10,6 +10,11 @@ class Ticket extends Model
         'match_id',
         'category_id',
         'type_id',
+        'price',
+    ];
+
+    protected $casts = [
+        'price' => 'double',
     ];
 
     /**
