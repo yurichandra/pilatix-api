@@ -34,3 +34,8 @@ $router->get('/tickets', 'TicketController@get');
 $router->post('/tickets', 'TicketController@store');
 $router->patch('/tickets/{id}', 'TicketController@update');
 $router->delete('/tickets/{id}', 'TicketController@delete');
+
+// For PurchaseController
+$router->get('/purchases', 'PurchaseController@get');
+$router->get('/purchases/users/{id}', 'PurchaseController@getByUser');
+$router->post('/purchases', 'PurchaseController@store');
