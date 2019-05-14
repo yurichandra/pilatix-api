@@ -25,7 +25,7 @@ class PurchaseDetail extends Model
      * @var array
      */
     protected $casts = [
-        'total' => 'double',
+        'price' => 'double',
         'subtotal' => 'double',
     ];
 
