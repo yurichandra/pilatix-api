@@ -17,6 +17,7 @@ class TicketTransformer extends TransformerAbstract
     {
         return [
             'id' => $ticket->id,
+            'price' => $ticket->price,
         ];
     }
 
