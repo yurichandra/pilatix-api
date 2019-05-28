@@ -17,6 +17,7 @@ class Purchase extends Model
     protected $fillable = [
         'user_id',
         'paid',
+        'unique_code',
         'date',
         'total',
     ];

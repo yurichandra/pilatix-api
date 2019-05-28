@@ -67,6 +67,7 @@ class PurchaseController extends RestController
                 'date' => Carbon::now(),
                 'total' => $purchase_total,
                 'details' => $purchase_details,
+                'unique_code' => str_random(6),
             ];
 
             $purchase = DB::transaction(function () use ($data) {
