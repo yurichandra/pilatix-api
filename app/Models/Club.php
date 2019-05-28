@@ -9,6 +9,7 @@ class Club extends Model
     protected $fillable = [
         'country_id',
         'name',
+        'photo',
     ];
 
     /**

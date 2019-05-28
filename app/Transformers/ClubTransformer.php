@@ -18,6 +18,7 @@ class ClubTransformer extends TransformerAbstract
         return [
             'id' => $club->id,
             'name' => $club->name,
+            'photo' => $club->photo,
         ];
     }
 }
