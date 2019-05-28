@@ -12,6 +12,10 @@ class Club extends Model
         'photo',
     ];
 
+    protected $hidden = [
+        'deleted_at',
+    ];
+
     /**
      * Define relation with Country model.
      *
