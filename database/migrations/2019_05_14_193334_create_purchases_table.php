@@ -16,6 +16,7 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->string('unique_code');
             $table->boolean('paid', false);
             $table->dateTime('date');
             $table->decimal('total');
