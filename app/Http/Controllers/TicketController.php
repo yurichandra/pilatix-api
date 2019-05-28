@@ -40,12 +40,14 @@ class TicketController extends RestController
                 'matchId' => 'required',
                 'typeId' => 'required',
                 'categoryId' => 'required',
+                'price' => 'required',
             ]);
 
             $ticket = Ticket::create([
                 'match_id' => $request->matchId,
                 'type_id' => $request->typeId,
                 'category_id' => $request->categoryId,
+                'price' => $request->price,
             ]);
 
             $item = $this->generateItem($ticket);
