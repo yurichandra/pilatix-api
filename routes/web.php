@@ -39,3 +39,7 @@ $router->delete('/tickets/{id}', 'TicketController@delete');
 $router->get('/purchases', 'PurchaseController@get');
 $router->get('/purchases/users/{id}', 'PurchaseController@getByUser');
 $router->post('/purchases', 'PurchaseController@store');
+
+// For SubscriptionController
+$router->get('/subscriptions/users/{id}', 'SubscriptionController@getByUser');
+$router->post('/subscriptions', 'SubscriptionController@store');
