@@ -26,6 +26,7 @@ class PurchaseTransformer extends TransformerAbstract
     {
         return [
             'id' => $purchase->id,
+            'uniqueCode' => $purchase->unique_code,
             'date' => $purchase->date,
             'total' => $purchase->total,
         ];
