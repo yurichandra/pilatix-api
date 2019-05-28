@@ -34,6 +34,20 @@ class TicketsTableSeeder extends Seeder
             'type_id' => 2,
             'price' => 50000,
         ],
+        [
+            'id' => 5,
+            'match_id' => 1,
+            'category_id' => 1,
+            'type_id' => 2,
+            'price' => 200000,
+        ],
+        [
+            'id' => 6,
+            'match_id' => 2,
+            'category_id' => 1,
+            'type_id' => 2,
+            'price' => 100000,
+        ],
     ];
 
     /**
