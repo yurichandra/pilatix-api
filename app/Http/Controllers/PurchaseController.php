@@ -41,38 +41,27 @@ class PurchaseController extends RestController
         try {
             $this->validate($request, [
                 'userId' => 'required',
-                'details' => 'required',
             ]);
 
-            $details = $request->input('details');
-
-            $purchase_details = collect($details)
-                ->map(function ($item) {
-                    return new PurchaseDetail([
-                        'ticket_id' => $item['ticketId'],
-                        'price' => $item['price'],
-                        'total' => $item['total'],
-                        'subtotal' => $item['total'] * $item['price'],
-                    ]);
-                });
-
-            $purchase_total = collect($details)
-                ->reduce(function ($carry, $item) {
-                    return $carry + ($item['total'] * $item['price']);
-                }, 0);
+            $total = $request->price * $request->total;
 
             $data = [
                 'user_id' => $request->userId,
                 'paid' => false,
                 'date' => Carbon::now(),
-                'total' => $purchase_total,
-                'details' => $purchase_details,
+                'total' => $total,
+                'ticket_id' => $request->ticketId,
                 'unique_code' => str_random(6),
             ];
 
-            $purchase = DB::transaction(function () use ($data) {
+            $purchase = DB::transaction(function () use ($data, $request) {
                 $purchase = Purchase::create($data);
-                $purchase->details()->saveMany($data['details']);
+                $purchase->details()->create([
+                    'ticket_id' => $data['ticket_id'],
+                    'total' => $request->total,
+                    'price' => $request->price,
+                    'subtotal' => $data['total'],
+                ]);
 
                 return $purchase;
             });
@@ -81,6 +70,7 @@ class PurchaseController extends RestController
 
             return $this->sendResponse($item, 201);
         } catch (\Exception $e) {
+            throw $e;
             return $this->sendIseResponse($e->getMessage());
         }
     }
